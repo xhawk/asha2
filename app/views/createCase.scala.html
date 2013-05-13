@@ -1,0 +1,24 @@
+@(caseForm: Form[Case])
+
+@import helper._
+
+@main("Create case") {
+
+    <h1>Add a new case</h1>
+
+    @form(routes.CreateCase.createCase()) {
+
+        @inputText(caseForm("name"))
+        @select(
+            field = caseForm("tos"),
+            options = options("" -> "Select tos-tehtävä", "01.01.01" -> "01.01.01", "01.01.02" -> "01.01.02")
+        )
+        @select(
+            field = caseForm("caseType"),
+            options = options("" -> "Select casetype", "Hakemus" -> "Hakemus", "Muu" -> "Muu")
+        )
+
+        <input type="submit" value="Create">
+
+    }
+}

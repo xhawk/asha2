@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           @controllers.Application.index()
+
+# Cases
+GET     /cases                      controllers.ListCases.getCases()
+GET     /case                       controllers.CreateCase.index()
+POST    /case                       controllers.CreateCase.createCase()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
