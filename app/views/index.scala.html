@@ -1,6 +1,6 @@
-@(pdl: List[org.activiti.engine.repository.ProcessDefinition])
+@(pdl: List[org.activiti.engine.repository.ProcessDefinition], user: User)
 
-@main("Tasks") {
+@main("Tasks", user) {
 
     <ul>
     @for(processDef <- pdl) {

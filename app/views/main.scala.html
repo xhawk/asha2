@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, user: User)(content: Html)
 
 <!DOCTYPE html>
 
@@ -10,6 +10,8 @@
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
     </head>
     <body>
+        <div><a href="@routes.Tasks.index()">Omat tehtävät</a>|<a href="@routes.CreateCase.index()">Luo asia</a>|<a href="@routes.ListCases.getCases()">Näytä asiat</a></div>
+        <span>Logged in as <b>@user.name</b></span>
         @content
     </body>
 </html>

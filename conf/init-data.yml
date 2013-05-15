@@ -1,0 +1,6 @@
+users:
+
+    - !!models.User
+        email:      tomi@tomisavolainen.net
+        name:       Tomi Savolainen
+        password:   secret

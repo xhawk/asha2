@@ -9,9 +9,7 @@ object ApplicationBuild extends Build {
 
   val appDependencies = Seq(
     // Add your project dependencies here,
-    "cglib" % "cglib" % "2.2.2",
     "org.activiti" % "activiti-engine" % "5.12.1",
-    "org.springframework" % "spring-context" % "3.1.2.RELEASE",
     javaCore,
     javaJdbc,
     javaEbean

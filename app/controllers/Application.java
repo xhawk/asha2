@@ -13,18 +13,7 @@ import java.util.List;
 
 import static play.data.Form.form;
 
-@org.springframework.stereotype.Controller
-@Security.Authenticated(Secured.class)
 public class Application extends Controller {
-
-    @Autowired
-    public ProcessEngine processEngine;
-  
-    public Result index() {
-        List<ProcessDefinition> pdl = processEngine.getRepositoryService().
-                createProcessDefinitionQuery().list();
-        return ok(views.html.index.render(pdl));
-    }
 
     public static class Login {
 
@@ -56,9 +45,7 @@ public class Application extends Controller {
             return badRequest(views.html.login.render(loginForm));
         } else {
             session("email", loginForm.get().email);
-            return redirect(
-                    routes.Application.index()
-            );
+            return redirect(routes.Tasks.index());
         }
     }
 
